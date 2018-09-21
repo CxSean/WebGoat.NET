@@ -70,8 +70,8 @@ namespace OWASP.WebGoat.NET
 	    protected void RegisterUser_CreatingUser(object sender, LoginCancelEventArgs e)
 	    {
 	    	/*
-	        Adding one additional line and more
-		string trimmedUserName = RegisterUser.UserName.Trim();
+		
+	        string trimmedUserName = RegisterUser.UserName.Trim();
 	        if (RegisterUser.UserName.Length != trimmedUserName.Length)
 	        {
 	            // Show the error message
