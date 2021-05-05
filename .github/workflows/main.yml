@@ -51,4 +51,4 @@ jobs:
           # GitHub API Token (note: you don't have to create secrets.GITHUB_TOKEN, it is created automatically and will not appear in your repo's custom secrets)
           github_token: ${{secrets.GITHUB_TOKEN}}
           # extra parameters
-          params: --bug-tracker=jira --config=cx.config --repo-name=WebGoat --namespace=scasey --branch=master --jira.url=${{secrets.JIRA_URL}} --jira.username=${{secrets.JIRA_USER}} --jira.token=${{secrets.JIRA_TOKEN}}
+          params: --bug-tracker=jira --config=cx.config --repo-name=WebGoat --branch=master --jira.url=${{secrets.JIRA_URL}} --jira.username=${{secrets.JIRA_USER}} --jira.token=${{secrets.JIRA_TOKEN}}
