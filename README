@@ -1,6 +1,7 @@
 ***************************** Webgoat.NET **********************************
 * Source Code: https://github.com/jerryhoff/WebGoat.NET
 * Download zip: https://github.com/jerryhoff/WebGoat.NET/zipball/master
+*adding an additional line to kick off a scan.
 ****************************************************************************
 
 This web application is a learning platform that attempts to teach about
