@@ -9,6 +9,8 @@ using System.Text;
 using System.Configuration;
 using Mono.Data.Sqlite;
 
+//adding comment
+
 namespace OWASP.WebGoat.NET
 {
 	public class DatabaseUtilities
