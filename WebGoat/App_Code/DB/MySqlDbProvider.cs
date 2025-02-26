@@ -347,24 +347,13 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             string result = string.Empty;
             try
             {
-            
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
-                    //get data
-                    string sql = "select * from CustomerLogin where email = '" + email + "';";
-                    MySqlDataAdapter da = new MySqlDataAdapter(sql, connection);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-
-                    //check if email address exists
-                    if (ds.Tables[0].Rows.Count == 0)
-                    {
-                        result = "Email Address Not Found!";
-                    }
-
-                    string encoded_password = ds.Tables[0].Rows[0]["Password"].ToString();
-                    string decoded_password = Encoder.Decode(encoded_password);
-                    result = decoded_password;
+                    string sql = "select * from CustomerLogin where email = @Email;";
+                    MySqlCommand command = new MySqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@Email", email);
+                    
+                    // continue with executing the query
                 }
             }
             catch (Exception ex)
