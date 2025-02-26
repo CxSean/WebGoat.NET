@@ -347,7 +347,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             string result = string.Empty;
             try
             {
-            
+
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     //get data
@@ -365,6 +365,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                     string encoded_password = ds.Tables[0].Rows[0]["Password"].ToString();
                     string decoded_password = Encoder.Decode(encoded_password);
                     result = decoded_password;
+                    string sql = "select * from CustomerLogin where email = @Email;";
+                    MySqlCommand command = new MySqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@Email", email);
+
+                    // continue with executing the query
                 }
             }
             catch (Exception ex)
